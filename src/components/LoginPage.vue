@@ -135,8 +135,8 @@ export default {
 }
 .icon3 {
   position: absolute;
-  top: 180px;
-  right: 254px;
+  top: 280px;
+  right: 600px;
   width: 455px;
   height: 432px;
 }
@@ -149,11 +149,11 @@ export default {
 .icon5 {
   position: absolute;;
   bottom: -24px;
-  right: 550px;
+  right: 1030px;
 }
 .icon6 {
   position: absolute;
   bottom: -18px;
-  left: 380px;
+  left: 650px;
 }
 </style>

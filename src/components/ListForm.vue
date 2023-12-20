@@ -30,22 +30,29 @@
             </router-link>
           </div>
           <div>
-            <ul class="form__users">
-              <register-field @formSaved="addForm">
-              <li class="form__user" v-for="(form, index) in forms" :key="index">
-                
-                <div class="form__user-block">
-                  <h3 class="form__user-title">{{ form.title }}</h3>
-                  <span class="form__user-author">{{ form.author }} {{ form.surname }}</span>
-                  <span class="form__user-date">{{ form.creationDate }}</span>
-                </div>
-                <div class="form__button__users">
-                  <button class="button__edit">Редактировать</button>
-                  <button class="button__remove" @click="removeForm(index)">Удалить</button>
-                </div>
-              </li>
+            <register-field @formSaved="addForm">
+              <ul class="form__users">
+                <li
+                  class="form__user"
+                  v-for="(form, index) in forms"
+                  :key="index"
+                >
+                  <div class="form__user-block">
+                    <h3 class="form__user-title">{{ form.title }}</h3>
+                    <span class="form__user-author"
+                      >{{ form.author }} {{ form.surname }}</span
+                    >
+                    <span class="form__user-date">{{ form.creationDate }}</span>
+                  </div>
+                  <div class="form__button__users">
+                    <button class="button__edit">Редактировать</button>
+                    <button class="button__remove" @click="removeForm(index)">
+                      Удалить
+                    </button>
+                  </div>
+                </li>
+              </ul>
             </register-field>
-            </ul>
           </div>
         </div>
       </div>
@@ -54,8 +61,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: "ListForm",
   data() {
@@ -66,7 +71,6 @@ export default {
           author: "Автор :",
           creationDate: "Дата создания :",
         },
-       
       ],
     };
   },
@@ -74,7 +78,9 @@ export default {
     removeForm(index) {
       this.forms.splice(index, 1);
     },
-
+    addForm(formData) {
+    this.forms.push(formData);
+  },
   },
 };
 </script>
