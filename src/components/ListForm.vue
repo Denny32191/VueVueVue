@@ -19,40 +19,42 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="section-right">
-      <div class="main">
-        <div class="form__register">
-          <div class="form__title">
-            <h1 class="form__title-heading">Формы</h1>
-            <router-link to="/register-field">
-              <button class="button__green">Создать Форму</button>
-            </router-link>
-          </div>
-          <div>
-            <register-field @formSaved="addForm">
-              <ul class="form__users">
-                <li
-                  class="form__user"
-                  v-for="(form, index) in forms"
-                  :key="index"
-                >
-                  <div class="form__user-block">
-                    <h3 class="form__user-title">{{ form.title }}</h3>
-                    <span class="form__user-author"
-                      >{{ form.author }} {{ form.surname }}</span
-                    >
-                    <span class="form__user-date">{{ form.creationDate }}</span>
-                  </div>
-                  <div class="form__button__users">
-                    <button class="button__edit">Редактировать</button>
-                    <button class="button__remove" @click="removeForm(index)">
-                      Удалить
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            </register-field>
+      <div class="section-right">
+        <div class="main">
+          <div class="form__register">
+            <div class="form__title">
+              <h1 class="form__title-heading">Формы</h1>
+              <router-link to="/register-field">
+                <button class="button__green">Создать Форму</button>
+              </router-link>
+            </div>
+            <div>
+              <register-field @formSaved="addForm">
+                <ul class="form__users">
+                  <li
+                    class="form__user"
+                    v-for="(form, index) in forms"
+                    :key="index"
+                  >
+                    <div class="form__user-block">
+                      <h3 class="form__user-title">{{ form.title }}</h3>
+                      <span class="form__user-author"
+                        >{{ form.author }} {{ form.surname }}</span
+                      >
+                      <span class="form__user-date">{{
+                        form.creationDate
+                      }}</span>
+                    </div>
+                    <div class="form__button__users">
+                      <button class="button__edit">Редактировать</button>
+                      <button class="button__remove" @click="removeForm(index)">
+                        Удалить
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </register-field>
+            </div>
           </div>
         </div>
       </div>
@@ -79,8 +81,8 @@ export default {
       this.forms.splice(index, 1);
     },
     addForm(formData) {
-    this.forms.push(formData);
-  },
+      this.forms.push(formData);
+    },
   },
 };
 </script>
@@ -88,10 +90,13 @@ export default {
 .wrapper {
   width: 100%;
 }
+.container {
+  max-width: 1440px;
+  display: flex;
+  margin: 0 auto;
+}
 .section-left {
-  float: left;
-  width: 31%;
-  height: 902px;
+  width: 400px;
 }
 .form {
   display: flex;
@@ -144,7 +149,6 @@ export default {
   margin-bottom: 30px;
 }
 .section-right {
-  float: right;
   width: 69%;
   height: 100vh;
   overflow: hidden;

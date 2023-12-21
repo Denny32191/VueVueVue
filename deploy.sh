@@ -9,17 +9,17 @@ npm run build
 # переход в каталог сборки
 cd dist
 
-# если вы публикуете на пользовательский домен
-# echo 'www.example.com' > CNAME
-
+# инициализация нового репозитория git
 git init
+
+# добавление всех файлов в индекс git
 git add -A
+
+# создание коммита
 git commit -m 'deploy'
 
-# если вы публикуете по адресу https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+# пуш в ветку gh-pages репозитория https://github.com/Denny32191/VueVueVue.git
+git push -f git@github.com:Denny32191/VueVueVue.git master:gh-pages
 
-# если вы публикуете по адресу https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-
+# переход обратно в исходную директорию
 cd -

@@ -1,4 +1,5 @@
 <template>
+  <div class="wrapper">
   <div class="container">
     <div class="section-left">
     <div>
@@ -34,6 +35,7 @@
     </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -54,16 +56,19 @@ export default {
 </script>
 
 <style scoped>
+.wrapper{
+  width: 100%;
+}
 .container {
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  max-width: 1440px;
   height: 100vh;
-  overflow: hidden;;
+  overflow: hidden;
+  margin: 0 auto;
 }
 .section-left {
   display: flex;
-  float: left;
   min-width: 624px;
   flex-direction: column;
   align-items: center;

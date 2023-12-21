@@ -1,4 +1,5 @@
 <template>
+  <div class="wrapper">
   <div class="container">
     <div class="section-left">
       <div class="form">
@@ -134,6 +135,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -193,15 +195,17 @@ export default {
 };
 </script>
 <style scoped>
+.wrapper {
+  width: 100%;
+}
 .container {
-  width: 100vw;
-  height: 100vh;
+  max-width: 1440px;
   overflow: hidden;
   display: flex;
+  margin: 0 auto;
   
 }
 .section-left {
-  float: left;
   width: 434px;
   height: 971px;
 }
